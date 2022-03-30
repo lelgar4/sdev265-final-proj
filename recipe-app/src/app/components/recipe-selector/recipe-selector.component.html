@@ -1,0 +1,36 @@
+<div class="recipe-creator-container">
+    <mat-tab-group>
+        <mat-tab label="measurement">
+            <app-item-selector #measure (itemCompleteEvent)="checkComplete($event)" [currentType]="'measurement'">
+            </app-item-selector>
+        </mat-tab>
+        <mat-tab label="ingredients">
+            <app-item-selector #ingredient (itemCompleteEvent)="checkComplete($event)" [currentType]="'ingredients'">
+            </app-item-selector>
+        </mat-tab>
+        <mat-tab label="prepared">
+            <app-item-selector #prepared (itemCompleteEvent)="checkComplete($event)" [currentType]="'prepared'">
+            </app-item-selector>
+        </mat-tab>
+    </mat-tab-group>
+    <div>Measurement:{{measurementItem}}</div>
+    <div>Ingredient:{{ingredientsItem}}</div>
+    <div>Prepared:{{preparedItem}}</div>
+
+    <button style="margin-top:15px;"
+        [disabled]="measurementItem === '' || ingredientsItem === '' || preparedItem === ''"
+        (click)="generateIngredients()">Enter Ingredient</button>
+
+
+    <h3>Ingredient list:</h3>
+    <div *ngFor="let step of steps; let num = index">
+        <div (click)="changeItem(step)" class="ing-item" [ngClass]="{'selected-item': selectedItem == step}"> {{num + 1}}: {{step.measurement}} {{step.ingredient}}
+            {{step.preparation}}</div>
+    </div>
+
+    <h3>Instructions:</h3>
+    <textarea rows="10" #instructions></textarea>
+
+    <h4>Submit:</h4>
+    <button (click) = "updateRecipeInformation(instructions.value)">Submit item</button>
+</div>

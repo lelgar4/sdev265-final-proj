@@ -1,0 +1,18 @@
+<div class="login-form">
+    <h1>Login</h1>
+
+    <mat-tab-group>
+        <mat-tab label="login">    
+            <input type="text" name="username" placeholder="Username" id="username" #username required>
+            <input type="password" name="password" placeholder="Password" id="password" #password required>
+            <button type="submit" (click)="loginUser(username.value,password.value)">Login</button>
+    </mat-tab>
+        <mat-tab label="register">    
+            <input type="text" name="username" placeholder="Username" #usernamereg required>
+            <input type="password" name="password" placeholder="Password" #passwordreg required>
+            <input type="password" name="confirm password" placeholder="Password" #confPassword required>
+            <input type="email" name="email" placeholder="Email" #email required>
+            <button type="submit" (click)="registerUser(usernamereg.value,passwordreg.value,confPassword.value,email.value)">Login</button>
+    </mat-tab>
+    </mat-tab-group>
+</div>

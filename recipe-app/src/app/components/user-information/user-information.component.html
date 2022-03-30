@@ -1,0 +1,31 @@
+<!-- TODO:
+    Create UI
+    Find good way to separate information
+    Find good way to go to each component
+-->
+
+<!-- MAIN COMPONENT -->
+
+
+<div>
+    <h3>
+        Welcome,{{user}}
+    </h3>
+</div>
+
+<mat-tab-group>
+    <mat-tab label="Recipes">
+        <button (click)="addRecipe()">
+            Add Recipe
+        </button>
+        <div *ngFor="let recipe of recipes">
+            <div (click)="goToRecipeBuilder(recipe.id)">{{recipe.name}}:{{recipe.description}}</div>
+        </div>
+
+    </mat-tab>
+    <mat-tab label="Checklists">
+        <button (click)="addChecklist()">
+            Add Checklist
+        </button>
+    </mat-tab>
+</mat-tab-group>

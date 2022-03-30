@@ -1,0 +1,17 @@
+.ing-item:hover{
+    background-color: gray;
+}
+.selected-item{
+    background-color: gray;
+}
+.recipe-creator-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:960px;
+}
+
+app-recipe-selector{
+    display: flex;
+    justify-content: center;
+}

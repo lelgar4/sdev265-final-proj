@@ -1,0 +1,5 @@
+<div style="display: flex;">
+<div *ngFor = "let items of currentArray" class="items">
+    <div class="item-value" (click)="itemSelected(items)">{{items}}</div>
+</div>
+</div>

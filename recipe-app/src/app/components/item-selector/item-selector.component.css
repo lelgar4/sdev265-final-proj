@@ -1,0 +1,15 @@
+.item-value{
+    display: flex;
+    padding:5px 10px;
+    margin:5px 10px;
+    border:1px solid black;
+    border-radius: 10px;
+}
+.item-value:hover{
+    background-color: gray;
+}
+.items{
+    display: flex;
+    
+}
+
